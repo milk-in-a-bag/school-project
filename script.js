@@ -4,10 +4,9 @@ const dateElement = document.querySelector('.date');
 function formatTime(date) {
     const hours12 = date.getHours() % 12 || 12;
     const minutes = date.getMinutes();
-    const seconds = date.getSeconds();
     const ampm = date.getHours() >= 12? 'PM' : 'AM';
 
-    return `${hours12}:${minutes < 10? `0${minutes}` : minutes}:${seconds< 10? `0${seconds}` : seconds} ${ampm}`;
+    return `${hours12}:${minutes < 10? `0${minutes}` : minutes} ${ampm}`;
 }
 
 function formatDate(date) {
