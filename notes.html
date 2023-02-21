@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/2a3626c308.js" crossorigin="anonymous"></script>
+    <script src="./notes.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./notes.css">
+    <title>Notes</title>
+</head>
+<body>
+    <section class="sidebar">
+        <div class="logo">
+            <h2>AcademIQ</h2>
+        </div>
+        <div class="menu">
+            <div class="menu-item dashboard">
+                <a href="./index.html">
+                    <i class="fa-solid fa-shapes"></i>
+                    <p>Dashboard</p>
+                </a>
+            </div>
+            <div class="menu-item events">
+                <a href="#">
+                    <i class="fa-solid fa-bell"></i>
+                    <p>Events</p>
+                </a>
+            </div>
+            <div class="menu-item material">
+                <a href="#">
+                    <i class="fa-solid fa-book"></i>
+                    <p>Material</p>
+                </a>
+            </div>
+            <div class="menu-item notes">
+                <a href="./notes.html">
+                    <i class="fa-solid fa-feather"></i>
+                    <p>Notes</p>
+                </a>
+            </div>
+            <div class="menu-item support">
+                <a href="#">
+                    <i class="fa-solid fa-handshake-angle"></i>
+                    <p>Support</p>
+                </a>
+            </div>
+            <div class="log-out">
+                <a href="#">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <p>Log out</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!--Main content-->
+    <section class="main-content">
+        <div class="container">
+           <div class="intro">
+                <h3>Introducing our new note-taking feature</h3>
+                <p>You won't ever have to write notes again</p>
+           </div>        
+            <div class="speech-to-text">
+                <div class="header">
+                    <h3>Speech to text generator</h3>
+                </div>
+                <div class="button"> 
+                    <button class="listen-button">
+                        <i class="fa-solid fa-microphone"></i>
+                        Start listening
+                    </button>
+                </div>
+                <div class="result">
+                    <div>
+                        <h3>Result:</h3>
+                    </div>
+                    <div class="text">
+
+                    </div>
+                </div>
+                <div class="button-wrapper">
+                    <div>
+                        <button class="clear-button">
+                            <i class="fa-solid fa-trash-can"></i>
+                            Clear
+                        </button>
+                    </div>
+                    <div>
+                        <button class="download-button">
+                            <i class="fa-solid fa-file-arrow-down"></i>
+                            Download
+                        </button>
+                    </div>
+                </div>
+            </div>
+    </div>
+    </section>
+</body>
+</html>

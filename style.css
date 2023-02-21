@@ -42,9 +42,10 @@ a{
     cursor: pointer;
     transform: translateX(10px);
 }
-.menu-item a:focus{
+.dashboard{
     background-color: rgba(179, 179, 179, 0.1);
     border-left: 3px solid #17A1FA;
+    width: 90%;
 }
 .menu-item i, .log-out i{
     color: #b3b3b3;

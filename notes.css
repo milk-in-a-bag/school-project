@@ -1,0 +1,132 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+}
+p{
+    color: #616161;
+}
+p, button{
+    font-family: 'Overpass', sans-serif;
+}
+h1, h2, h3, h4, h5, h6{
+    font-family: 'Poppins', sans-serif;
+}
+.logo{
+    padding: 20px;
+}
+.logo h2{
+    color: #17A1FA;
+    font-family: 'Poppins', sans-serif;
+}
+.sidebar{
+    width: 15vw;
+    height: 100vh;
+}
+.menu{
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+a{
+    text-decoration: none;
+}
+.menu-item a{
+    padding: 10px 5px;
+    display: flex;
+    align-items: center;
+    align-items: center;
+    gap: 10px;
+}
+.menu-item{
+    transition: 1000ms;
+}
+.menu-item:hover{
+    cursor: pointer;
+    transform: translateX(10px);
+}
+.notes{
+    background-color: rgba(179, 179, 179, 0.1);
+    border-left: 3px solid #17A1FA;
+    width: 90%;
+}
+.menu-item i, .log-out i{
+    color: #b3b3b3;
+}
+.menu-item p, .log-out p{
+    color: #616161;
+}
+.log-out a{
+    position: absolute;
+    bottom: 20px;
+    padding: 10px 5px;
+    display: flex;
+    align-items: center;
+    align-items: center;
+    gap: 10px;
+}
+
+/*main-content styles*/
+
+.main-content{
+    width: 85vw;
+    padding: 0 20px;
+    background-color: rgba(179, 179, 179, 0.05);
+}
+.intro{
+    margin: 20px;
+    text-align: center;
+}
+.intro h3{
+    color: #17A1FA;
+}
+.speech-to-text{
+    padding: 20px;
+    display: grid;
+    place-items: center;
+    margin: 0 auto;
+    width: 40%;
+    background-color: #fff;
+    border-radius: 20px;
+    height: 80vh;
+}
+.button button{
+    width: 30vw;
+    font-size: 20px;
+    padding: 15px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+.result h3{
+    position: relative;
+    top: 10px;
+}
+.text{
+    width: 30vw;
+    height: 40vh;
+    border: 2px solid #b3b3b3;
+    margin: 20px auto;
+    overflow: scroll;
+}
+
+button{
+    background-color: #17A1FA;
+}
+.button-wrapper button{
+    width: 14vw;
+    font-size: 20px;
+    padding: 10px;
+    border: none;
+    color: #fff;
+    cursor: not-allowed;
+    background-color: rgba(179, 179, 179, 0.7);
+}
+.button-wrapper{
+    width: 30vw;
+    display: flex;
+    justify-content: space-between;
+}
