@@ -1,0 +1,332 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+}
+p{
+    color: #616161;
+}
+p, button{
+    font-family: 'Overpass', sans-serif;
+}
+h1, h2, h3, h4, h5, h6{
+    font-family: 'Poppins', sans-serif;
+}
+.logo{
+    padding: 20px;
+}
+.logo h2{
+    color: #17A1FA;
+    font-family: 'Poppins', sans-serif;
+}
+.sidebar{
+    width: 15vw;
+    height: 100vh;
+}
+.menu{
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+a{
+    text-decoration: none;
+}
+.menu-item a{
+    padding: 10px 5px;
+    display: flex;
+    align-items: center;
+    align-items: center;
+    gap: 10px;
+}
+.menu-item{
+    transition: 1000ms;
+}
+.menu-item:hover{
+    cursor: pointer;
+    transform: translateX(10px);
+}
+.events{
+    background-color: rgba(179, 179, 179, 0.1);
+    border-left: 3px solid #17A1FA;
+    width: 90%;
+}
+.menu-item i, .log-out i{
+    color: #b3b3b3;
+}
+.menu-item p, .log-out p{
+    color: #616161;
+}
+.log-out a{
+    position: absolute;
+    bottom: 20px;
+    padding: 10px 5px;
+    display: flex;
+    align-items: center;
+    align-items: center;
+    gap: 10px;
+}
+
+/*calendar styles*/
+.events-section{
+    place-items: center;
+    overflow: hidden;
+    background-color: rgba(179, 179, 179, 0.05);
+    width: 85vw;
+}
+.container{
+    width: max-content;
+    height: max-content;
+    position: relative;
+    display: flex;
+    padding: 2% 0 0 0;
+    justify-content: center;
+    top: 10%;
+    right: 0%;
+    width: 100%;
+    height: 100%
+}
+.calendar{
+    height: 610px;
+    width: max-content;
+    background-color: #fff;
+    border-radius: 25px;
+    overflow: hidden;
+    padding: 30px 50px 0 50px;
+    box-shadow: ;
+}
+.calendar-header{
+    background: #17A1FA;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 700;
+    color: #fff;
+    padding: 10px;
+}
+.calendar{
+    pad: 10px;
+}
+.calendar-week-days{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    font-weight: 600;
+    cursor: pointer;
+    color: #616161;
+}
+.calendar-week-days div:hover{
+    color: #000;
+    transform: scale(1.2);
+    transition: all .2s ease-in-out;
+}
+.calendar-week-days div{
+    display: grid;
+    place-items: center;
+    color: #b3b3b3;
+    height: 50px;
+}
+.calendar-days{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+    color: ;
+}
+.calendar-day div{
+    width: 37px;
+    height: 33px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    position: relative;
+    cursor: pointer;
+    animation: to-top 1s forwards;
+}
+.month-picker{
+    padding: 5px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.month-picker:hover{
+    background-color: #f5f5f5;
+    color: #616161;
+}
+.year-picker{
+    display: flex;
+    align-items: center;
+}
+.year-change{
+    height: 30px;
+    width: 30px;
+    border-radius: 50px;
+    display: grid;
+    place-items: center;
+    margin: 0 10px;
+    cursor: pointer;
+}
+.year-change:hover{
+    background-color: #f5f5f5;
+    transition: all .2s ease-in-out;
+    transform: scale(1.2);
+}
+.year-change:hover pre{
+    color: #17A1FA;
+}
+.calendar-footer{
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+#year:hover{
+    cursor: pointer;
+    transform: scale(1.2);
+    transition: all 0.2s ease-in-out;
+}
+.calendar-days div span{
+    position: absolute;
+}
+.calendar-days div:hover{
+    transition: width 0.2s ease-in-out, height 0.2s ease-in-out;
+    background-color: #f5f5f5;
+    border-radius: 20%;
+    color: #000;
+}
+.month-list{
+    position: relative;
+    left: 0;
+    top: -50px;
+    background-color: ;
+    color: #616161;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: 5px;
+    border-radius: 20px:
+}
+.month-list > div{
+    display: grid;
+    place-content: center;
+    margin: 5px 10px;
+    transition: all 0.2s ease-in-out;
+}
+.month-list > div > div{
+    border-radius: 15px;
+    padding: 10px;
+    cursor: pointer;
+}
+.month-list > div > div:hover{
+    background-color: #17A1FA;
+    color: #616161;
+    transform: scale(0.9);
+    transition: all 0.2s ease-in-out;
+}
+.month-list .show{
+    visibility: visible;
+    pointer-events: visible;
+    transition: 0.6s ease-in-out;
+    animation: to-left .71s forwards;
+}
+.month-list.hideonce{
+    visibility: hidden;
+}
+.month-list.hide{
+    animation: to-right 1s forwards;
+    visibility: none;
+    pointer-events: none;
+}
+.date-time-format{
+    width: max-content;
+    height: max-content;
+    position: relative;
+    display: inline;
+    top: 140px;
+    justify-content: center;
+    right: 40px;
+}
+.day-text-format{
+    font-size: 1.4rem;
+    padding-right: 5%;
+    border-right: 3px solid #17A1FA;
+    position: absolute;
+    left: -2rem;
+}
+.date-time-value{
+    display: block;
+    height: max-content;
+    width: max-content;
+    position: relative;
+    left: 40%;
+    top: -18px;
+    text-align: center;
+}
+.time-format{
+    font-size: 1.5rem;
+}
+.time-format.hideTime{
+    animation: hidetimer 1.5s forwards;
+}
+.day-text-format.hidetime{
+    animation: hidetime 1.5s forwards;
+}
+.date-format.hideTime{
+    animation: hidetime 1.5s forwards;
+}
+.day-text-format.showtime{
+    animation: showtime 1s forwards;
+}
+.time-format.showtime{
+    animation: showtime 1s forwards;
+}
+.date-format.showtime{
+    animation: showtime 1s forwards;
+}
+@keyframes to-top {
+    0%{
+        transform: translateY(0);
+    } 100%{
+        transform: translateY(100%);
+    }
+}
+@keyframes to-left {
+    0%{
+        transform: translateX(230%);
+        opacity: 1;
+    } 100%{
+        transform: translateX(230%);
+        opacity: 1;
+    }
+}
+@keyframes to-right{
+    10%{
+        transform: translateX(0%);
+        opacity: 1;
+    } 100%{
+        transform: translateX(-150%);
+        opacity: 1;
+    }
+}
+@keyframes showtime{
+    0%{
+        transform: translateX(250%);
+        opacity: 1;
+    } 100%{
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}
+@keyframes hidetime{
+    0%{
+        transform: translateX(0%);
+        opacity: 1;
+    } 100%{
+        transform: translateX(-370%);
+        opacity: 1;
+    }
+}
+@media (max-width: 375px){
+    .month-list>div{
+        margin: 5px 0;
+    }
+}

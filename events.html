@@ -5,17 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/2a3626c308.js" crossorigin="anonymous"></script>
-    <script src="notes.js" defer></script>
+    <script src="events.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="notes.css">
-    <title>Notes</title>
+    <link rel="stylesheet" href="events.css">
+    <title>Events</title>
 </head>
 <body>
+    <!--Sidebar-->
+
     <section class="sidebar">
         <div class="logo">
             <h2>AcademIQ</h2>
@@ -60,47 +62,59 @@
         </div>
     </section>
 
-    <!--Main content-->
-    <section class="main-content">
+    <!--Calendar-->
+    <section class="events-section">
+        <div class="intro">
+            <h2 class="heading">Event Schedular</h2>
+            <p>Let's help you stay organized and up to date</p>
+        </div>
+
+
         <div class="container">
-           <div class="intro">
-                <h3>Introducing our new note-taking feature</h3>
-                <p>You won't ever have to write notes again</p>
-           </div>        
-            <div class="speech-to-text">
-                <div class="header">
-                    <h3>Speech to text generator</h3>
-                </div>
-                <div class="button"> 
-                    <button class="listen-button">
-                        <i class="fa-solid fa-microphone"></i>
-                        Start listening
-                    </button>
-                </div>
-                <div class="result">
-                    <div>
-                        <h3>Result:</h3>
+            <div class="calendar">
+                <div class="calendar-header">
+                    <span class="month-picker" id="month-picker">Feb</span>
+                    <div class="year-picker" id="year-picker">
+                        <span class="year-change" id="pre-year">
+                            <pre><</pre>
+                        </span>
+                        <span id="year">2023</span>
+                        <span class="year-change" id="next-year">
+                            <pre>></pre>
+                        </span>
                     </div>
-                    <div class="text">
+                </div>
+
+                <div class="calendar-body">
+                    <div class="calendar-week-days">
+                        <div>Sun</div>
+                        <div>Mon</div>
+                        <div>Tue</div>
+                        <div>Wed</div>
+                        <div>Thu</div>
+                        <div>Fri</div>
+                        <div>Sat</div>
+                    </div>
+
+                    <div class="calendar-days">
 
                     </div>
                 </div>
-                <div class="button-wrapper">
-                    <div>
-                        <button class="clear-button">
-                            <i class="fa-solid fa-trash-can"></i>
-                            Clear
-                        </button>
-                    </div>
-                    <div>
-                        <button class="download-button">
-                            <i class="fa-solid fa-file-arrow-down"></i>
-                            Download
-                        </button>
+
+                <div class="calendar-footer">
+                    <div class="date-time-format">
+                        <div class="day-text-format">TODAY</div>
+                        <div class="date-time-value">
+                            <div class="time-format">9:10 PM</div>
+                            <div class="date-format">Friday, 24 February 2023</div>
+                        </div>
+                        <div class="month-list"></div>
                     </div>
                 </div>
+
             </div>
-    </div>
+        </div>
+
     </section>
 </body>
 </html>

@@ -7,7 +7,7 @@ window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecogn
 let recording = false;
 
 function speechToText(){
-   const recognition = new SpeechRecognition;
+   let recognition = new SpeechRecognition;
    recognition.interimResults = true;
    listen.innerText = 'Listening...'
 
@@ -54,15 +54,34 @@ listen.addEventListener("click", () => {
 
 function stopRecording(){
     recognition.stop();
-    recordBtn.querySelector("p").innerHTML = "Start Listening";
+    listen.innerText = "Start Listening";
     recording = false;
 }
 
 clear.addEventListener('click', ()=>{
-    words.innerHTML = '';
+    words.innerText = '';
     download.style.cursor = 'not-allowed';
     download.style.backgroundColor = 'rgba(179, 179, 179, 0.7)'
 
     clear.style.cursor = 'not-allowed';
     clear.style.backgroundColor = 'rgba(179, 179, 179, 0.7)';
+    stopRecording();
 })
+
+function saveFile() {
+    const text = words.innerText;
+    const filename = "speech.txt";
+  
+    const element = document.createElement("a");
+    element.setAttribute(
+      "href",
+      "data:text/plain;charset=utf-8," + encodeURIComponent(text)
+    );
+    element.setAttribute("download", filename);
+    element.style.display = "none";
+    document.body.appendChild(element);
+    element.click();
+    document.body.removeChild(element);
+  }
+  
+  download.addEventListener("click", saveFile);
