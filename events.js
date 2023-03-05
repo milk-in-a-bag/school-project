@@ -71,10 +71,8 @@ const isLeapYear = (year) => {
     
     month_picker.innerHTML = month_names[month];
     
-    calendar_header_year.innerHTML = year;
-    
+    calendar_header_year.innerHTML = year; 
     let first_day = new Date(year, month);
-  
   
   for (let i = 0; i <= days_of_month[month] + first_day.getDay() - 1; i++) {
       let day = document.createElement('div');
@@ -91,9 +89,15 @@ const isLeapYear = (year) => {
         }
       }
       calendar_days.appendChild(day);
+
+      day.addEventListener('click', ()=>{
+        const container = document.querySelector('.contianer');
+        container.style.display = 'none';
+        eventCreator.style.display = 'block'
+        
+      })
     }
   };
-  
   let month_list = calendar.querySelector('.month-list');
   month_names.forEach((e, index) => {
     let month = document.createElement('div');
@@ -153,4 +157,9 @@ const isLeapYear = (year) => {
     )}`;
     todayShowTime.textContent = formateTimer;
   }, 1000);
+
+  //event-creator script
+
+  const eventCreator = document.querySelector('.event-wrapper');
+  eventCreator.style.display = 'none';
   

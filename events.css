@@ -74,7 +74,6 @@ a{
     width: 85vw;
     height: 100vh;
     background-color: rgba(179, 179, 179, 0.05);
-    overflow: hidden;
 }
 .intro{
     text-align: center;
@@ -206,9 +205,6 @@ a{
     background-color: #17A1FA;
     color: #fff;
   }
-  .today:hover{
-    background-color: #17A1FA;
-  }
   .calendar-days div.current-date {
     color: #fff;
     background-color: #17A1FA;
@@ -237,8 +233,7 @@ a{
     cursor: pointer;
   }
   .month-list > div > div:hover {
-    background-color:var(--light-btn);
-    color: var(--dark-text);
+    color: #000;
     transform: scale(0.9);
     transition: all 0.2s ease-in-out;
   }
@@ -278,6 +273,11 @@ a{
     left: -1rem;
     padding-right: 20px;
     font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+  }
+  .day-text-formate a{
+    text-decoration: none;
+    color: #000;
   }
   .date-time-value {
     display: block;
@@ -366,3 +366,106 @@ a{
       margin: 5px 0px;
     }
   }
+
+/*form styles*/
+
+.event-form{
+  width: 30vw;
+  margin: 20px auto;
+  background-color: #fff;
+  padding: 20px;
+}
+.close-button i{
+  font-size: 25px;
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-end;
+  color: #b3b3b3;
+}
+.close-button i:hover{
+  color: red;
+}
+.event-form div{
+  margin-bottom: 20px;
+}
+#event{
+  outline: 0;
+  border: 0;
+  border-bottom: 1px solid #000;
+}
+.event-name{
+  cursor: pointer;
+}
+.event-name label{
+  position: relative;
+  right: 170px;
+}
+.description{
+  display: flex;
+  flex-direction: column;
+}
+.description input{
+  outline: 0;
+  border: 0;
+  background-color: rgba(217, 217, 217, 0.4);
+  width: 70%;
+  height: 50px;
+}
+.description label{
+  text-transform: uppercase;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+}
+.category p{
+  text-transform: uppercase;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  color: #000;
+}
+.time{
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  color: #000;
+}
+.date{
+  font-size: 16px;
+}
+.category button{
+  padding: 10px;
+  border-radius: 20px;
+  border: 0;
+  cursor: pointer;
+  font-size: 16px;
+}
+.note-taking{
+  color: #17A1FA;
+  background-color: rgba(23, 161, 250, 0.2);
+  margin-bottom: 10px;
+}
+.studying{
+  color: #FFBA08;
+  background-color: rgba(255, 186, 8, 0.4);
+}
+.assignment{
+  color: #F76F8E;
+  background-color: rgba(247, 111, 142, 0.4);
+}
+.rest{
+  color: #5CF64A;
+  background-color: rgba(92, 246, 74, 0.4);
+}
+.add{
+  color: #542E71;
+  background-color: rgba(84, 46, 113, 0.25);
+}
+.create-button button{
+  padding: 10px;
+  border: 0;
+  cursor: pointer;
+  color: #fff;
+  background-color: #17A1FA;
+  font-size: 16px;
+}
