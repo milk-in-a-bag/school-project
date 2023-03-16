@@ -1,3 +1,7 @@
+const container = document.querySelector('.contianer');
+const closeButton = document.querySelector('.close-button');
+const xMark = document.querySelector('.fa-xmark');
+  
 const isLeapYear = (year) => {
     return (
       (year % 4 === 0 && year % 100 !== 0 && year % 400 !== 0) ||
@@ -91,10 +95,22 @@ const isLeapYear = (year) => {
       calendar_days.appendChild(day);
 
       day.addEventListener('click', ()=>{
-        const container = document.querySelector('.contianer');
+        const leo = day;
         container.style.display = 'none';
         eventCreator.style.display = 'block'
         
+        const createButton = document.querySelector('.send-button');
+       
+        createButton.addEventListener('click', () => {
+          container.style.display = 'grid';
+          eventCreator.style.display = 'none';
+          console.log(leo);
+        });
+        
+        const eventName = document.querySelector('#event');
+        if(eventName.value === "" || eventName.value === null){
+          day.style.backgroundColor = 'red';
+        }
       })
     }
   };
@@ -159,7 +175,14 @@ const isLeapYear = (year) => {
   }, 1000);
 
   //event-creator script
-
+  
   const eventCreator = document.querySelector('.event-wrapper');
   eventCreator.style.display = 'none';
+  
+  closeButton.addEventListener('click', () => {
+        container.style.display = 'grid';
+        eventCreator.style.display = 'none';
+  }
+  )
+
   

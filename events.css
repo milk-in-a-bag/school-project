@@ -54,10 +54,10 @@ a{
     width: 90%;
 }
 .menu-item i, .log-out i{
-    color: #b3b3b3;
+  color: #b3b3b3;
 }
 .menu-item p, .log-out p{
-    color: #616161;
+  color: #616161;
 }
 .log-out a{
     position: absolute;
@@ -374,35 +374,94 @@ a{
   margin: 20px auto;
   background-color: #fff;
   padding: 20px;
+  display: flex;
+  flex-direction: row-reverse;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.close-button{
+  height: 40px;
+  width: 80px;
+  position: relative;
+  top: -20px;
+  left: 20px;
+  display: grid;
+  place-items: center;
+  background-color: rgba(179, 179, 179, 0.5);
+  transition: all .5s ease-in-out;
+  cursor: pointer;
 }
 .close-button i{
-  font-size: 25px;
+  font-size: 20px;
   cursor: pointer;
-  display: flex;
-  justify-content: flex-end;
-  color: #b3b3b3;
+  color: #fff;
 }
-.close-button i:hover{
-  color: red;
+.close-button:hover{
+  background-color: red;
 }
 .event-form div{
   margin-bottom: 20px;
 }
-#event{
-  outline: 0;
-  border: 0;
-  border-bottom: 1px solid #000;
+.wrapper{
+  width: 300px;
+  background: #fff;
 }
-.event-name{
-  cursor: pointer;
-}
-.event-name label{
+.wrapper .input-data{
+  height: 40px;
+  width: 100%;
   position: relative;
-  right: 170px;
+}
+.wrapper .input-data input{
+  height: 100%;
+  width: 100%;
+  border: none;
+  font-size: 17px;
+  border-bottom: 2px solid silver;
+  outline: none;
+}
+.input-data input:focus ~ label,
+.input-data input:valid ~ label{
+  transform: translateY(-20px);
+  font-size: 15px;
+  color: #17A1FA;
+}
+.wrapper .input-data label{
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  color: grey;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  font-family: 'Overpass', sans-serif;
+}
+.input-data .underline{
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  bottom: 0;
+}
+.input-data .underline:before{
+  position: absolute;
+  top: 20px;
+  content: "";
+  height: 100%;
+  width: 100%;
+  background: #17A1FA;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+.input-data input:focus ~ .underline:before,
+.input-data input:valid ~ .underline:before{
+  transform: scaleX(1);
 }
 .description{
   display: flex;
   flex-direction: column;
+}
+#desc{
+  outline: none;
+  border: 2px solid silver;
+  background-color:  rgba(217, 217, 217, 0.1);
 }
 .description input{
   outline: 0;
@@ -416,19 +475,20 @@ a{
   font-family: 'Poppins', sans-serif;
   font-weight: bold;
   font-size: 18px;
+  color: #616161;
 }
 .category p{
   text-transform: uppercase;
   font-family: 'Poppins', sans-serif;
   font-weight: bold;
   font-size: 18px;
-  color: #000;
+  color: #616161;
 }
 .time{
   font-family: 'Poppins', sans-serif;
   font-weight: bold;
   font-size: 18px;
-  color: #000;
+  color: #616161;
 }
 .date{
   font-size: 16px;
@@ -439,6 +499,7 @@ a{
   border: 0;
   cursor: pointer;
   font-size: 16px;
+  margin-right: 3px;
 }
 .note-taking{
   color: #17A1FA;

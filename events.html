@@ -116,48 +116,48 @@
               <div class="close-button">
                 <i class="fa-solid fa-xmark"></i>
               </div>
-              <div class="event-name">
-                <input type="text" name="event-name" id="event">
-                <label for="event">Event Name</label>
-              </div>
-              <div class="description">
-                <label for="desc">Description</label>
-                <input type="text" name="description" id="desc">
-              </div>
-              <div class="category">
-                <p>Category</p>
-                <button class="note-taking">
-                  <i class="fa-solid fa-feather"></i>
-                  Note taking
-                </button>
-                <button class="studying">
-                  <i class="fa-solid fa-book-open-reader"></i>
-                  Studying
-                </button>
-                <button class="assignment">
-                  <i class="fa-solid fa-pen-nib"></i>
-                  Assignment
-                </button>
-                <button class="rest">
-                  <i class="fa-solid fa-bed"></i>
-                  Rest
-                </button>
-                <button class="add">+ Add new</button>
-              </div>
-              <div class="time-and-date">
-
-                <p class="time">8:00 AM</p>
-                <p class="date">Thur, 25 Feb</p>
-              </div>
-              <div class="create-button">
-                <button>Create event</button>
+              <div class="content-wrapper">
+                <div class="wrapper">
+                  <div class="input-data">
+                    <input type="text" name="event-name" id="event" required>
+                    <div class="underline"></div>
+                    <label for="event">Event Name</label>
+                  </div>
+                </div>
+                <div class="description">
+                  <label for="desc">Description</label>
+                  <textarea name="description" id="desc" cols="30" rows="3"></textarea>
+                </div>
+                <div class="category">
+                  <p>Category</p>
+                  <button class="note-taking">
+                    <i class="fa-solid fa-feather"></i>
+                    Note taking
+                  </button>
+                  <button class="studying">
+                    <i class="fa-solid fa-book-open-reader"></i>
+                    Studying
+                  </button>
+                  <button class="assignment">
+                    <i class="fa-solid fa-pen-nib"></i>
+                    Assignment
+                  </button>
+                  <button class="rest">
+                    <i class="fa-solid fa-bed"></i>
+                    Rest
+                  </button>
+                  <button class="add">+ Add new</button>
+                </div>
+                <div class="time-and-date">
+                  <p class="time">8:00 AM</p>
+                  <p class="date">Thur, 25 Feb</p>
+                </div>
+                <div class="create-button">
+                  <button type="submit" class="send-button">Create event</button>
+                </div>
               </div>
             </div>
           </div>
-    </section>
-
-    <section class="event-creator">
-     
     </section>
 </body>
 </html>
