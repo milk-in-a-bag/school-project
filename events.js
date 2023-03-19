@@ -79,7 +79,7 @@ const isLeapYear = (year) => {
     let first_day = new Date(year, month);
   
   for (let i = 0; i <= days_of_month[month] + first_day.getDay() - 1; i++) {
-      let day = document.createElement('div');
+    let day = document.createElement('div');
       day.classList.add('day');
       
       if (i >= first_day.getDay()) {
@@ -94,23 +94,13 @@ const isLeapYear = (year) => {
       }
       calendar_days.appendChild(day);
 
+      //console.log(day);
       day.addEventListener('click', ()=>{
-        const leo = day;
         container.style.display = 'none';
-        eventCreator.style.display = 'block'
+        eventCreator.style.display = 'block';
         
-        const createButton = document.querySelector('.send-button');
-       
-        createButton.addEventListener('click', () => {
-          container.style.display = 'grid';
-          eventCreator.style.display = 'none';
-          console.log(leo);
-        });
-        
-        const eventName = document.querySelector('#event');
-        if(eventName.value === "" || eventName.value === null){
-          day.style.backgroundColor = 'red';
-        }
+        let eventName = document.querySelector("#event");
+        const sendButton = document.querySelector(".send-button");
       })
     }
   };
@@ -185,4 +175,8 @@ const isLeapYear = (year) => {
   }
   )
 
-  
+//form handling
+const form = document.querySelector(".event-form");
+const eventName = document.querySelector("#event");
+
+

@@ -275,6 +275,9 @@ a{
     font-family: 'Poppins', sans-serif;
     cursor: pointer;
   }
+  .clicked{
+    background-color: red;
+  }
   .day-text-formate a{
     text-decoration: none;
     color: #000;
@@ -378,6 +381,10 @@ a{
   flex-direction: row-reverse;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
+input, textarea, select{
+  outline: none;
+  font-family: "Overpass", sans-serif;
+}
 .close-button{
   height: 40px;
   width: 80px;
@@ -417,6 +424,9 @@ a{
   font-size: 17px;
   border-bottom: 2px solid silver;
   outline: none;
+}
+.input-data input{
+  background-color: #fff;
 }
 .input-data input:focus ~ label,
 .input-data input:valid ~ label{
@@ -521,6 +531,11 @@ a{
 .add{
   color: #542E71;
   background-color: rgba(84, 46, 113, 0.25);
+}
+#day-input, #month-input, #year-input{
+  padding: 2px;
+  font-size: 16px;
+  border: 1px solid #b3b3b3;
 }
 .create-button button{
   padding: 10px;
