@@ -121,7 +121,7 @@
                   <div class="input-data">
                     <input type="text" name="event-name" id="event" required>
                     <div class="underline"></div>
-                    <label for="event">Event Name</label>
+                    <label for="event" class="event-name">Event Name</label>
                   </div>
                 </div>
                 <div class="description">
@@ -150,23 +150,23 @@
                 </div>
                 <div class="time-and-date">
                   <p class="time">8:00 AM</p>
-                  <p class="date">Thur, 25 Feb</p>
-                  <input type="number" min="1" max="31" placeholder="Day" required id="day-input">
+                  <input type="number" min="1" placeholder="Day" required id="day-input">
                   <select name="" id="month-input">
-                    <option value="">January</option>
-                    <option value="">February</option>
-                    <option value="">March</option>
-                    <option value="">April</option>
-                    <option value="">May</option>
-                    <option value="">June</option>
-                    <option value="">July</option>
-                    <option value="">August</option>
-                    <option value="">September</option>
-                    <option value="">October</option>
-                    <option value="">November</option>
-                    <option value="">December</option>
+                    <option value="month" class="hide"></option>
+                    <option value="january">January</option>
+                    <option value="february">February</option>
+                    <option value="march">March</option>
+                    <option value="april">April</option>
+                    <option value="may">May</option>
+                    <option value="june">June</option>
+                    <option value="july">July</option>
+                    <option value="august">August</option>
+                    <option value="september">September</option>
+                    <option value="october">October</option>
+                    <option value="november">November</option>
+                    <option value="december">December</option>
                   </select>
-                  <input type="number" min="1990" max="2100" placeholder="Year" id="year-input" required>
+                  <input type="number" min="2023" max="2100" placeholder="Year" id="year-input" required>
                 </div>
                 <div class="create-button">
                   <button class="send-button">Create event</button>

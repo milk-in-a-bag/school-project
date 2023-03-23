@@ -80,7 +80,7 @@ const isLeapYear = (year) => {
   
   for (let i = 0; i <= days_of_month[month] + first_day.getDay() - 1; i++) {
     let day = document.createElement('div');
-      day.classList.add('day');
+    day.classList.add('day');
       
       if (i >= first_day.getDay()) {
         day.innerText = i - first_day.getDay() + 1;
@@ -94,13 +94,9 @@ const isLeapYear = (year) => {
       }
       calendar_days.appendChild(day);
 
-      //console.log(day);
       day.addEventListener('click', ()=>{
         container.style.display = 'none';
         eventCreator.style.display = 'block';
-        
-        let eventName = document.querySelector("#event");
-        const sendButton = document.querySelector(".send-button");
       })
     }
   };
@@ -179,4 +175,38 @@ const isLeapYear = (year) => {
 const form = document.querySelector(".event-form");
 const eventName = document.querySelector("#event");
 
+const dayInput = document.querySelector("#day-input");
+const monthInput = document.querySelector("#month-input");
+const yearInput = document.querySelector("#year-input");
 
+monthInput.addEventListener("change", () => {
+  const val = monthInput.value;
+  const mwaka = yearInput.value;
+
+  if(val === "january" || val === "march" || val === "may" || val === "july" || val === "august" || val === "october" || val === "december"){
+    dayInput.setAttribute("max", "31")
+  }
+  else if(val === "april" || val === "june" || val === "september" || val === "november"){
+    dayInput.setAttribute("max", "30");
+  }
+  else{
+    if(mwaka%4 === 0){
+      dayInput.setAttribute("max", "29")
+    }
+    else if(mwaka%4 !== 0){
+      dayInput.setAttribute("max", "28")
+    }
+  }
+})
+
+const dayVal = dayInput.value;
+const yearVal = yearInput.value;
+const monthVal = monthInput.value;
+
+if(Notification.permission !== "denied"){
+  Notification.requestPermission()
+};
+
+if(dayVal === currentDate.getDate() && yearVal === currentDate.getFullYear() && monthVal === month_names[currentDate.getMonth()]){
+
+}

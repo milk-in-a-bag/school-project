@@ -385,6 +385,12 @@ input, textarea, select{
   outline: none;
   font-family: "Overpass", sans-serif;
 }
+#day-input{
+  width: 50px;
+}
+.hide{
+  display: none;
+}
 .close-button{
   height: 40px;
   width: 80px;
@@ -448,6 +454,12 @@ input, textarea, select{
   height: 2px;
   width: 100%;
   bottom: 0;
+}
+.event-name{
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: "Poppins", sans-serif;
+  color: #616161;
 }
 .input-data .underline:before{
   position: absolute;
@@ -515,22 +527,47 @@ input, textarea, select{
   color: #17A1FA;
   background-color: rgba(23, 161, 250, 0.2);
   margin-bottom: 10px;
+  transition: all .5s;
+}
+.note-taking:hover{
+  background-color: #17A1FA;
+  color: #fff;
 }
 .studying{
   color: #FFBA08;
   background-color: rgba(255, 186, 8, 0.4);
+  transition: all .5s;
+}
+.studying:hover{
+  background-color: #FFBA08;
+  color: #fff;
 }
 .assignment{
   color: #F76F8E;
   background-color: rgba(247, 111, 142, 0.4);
+  transition: all .5s;
+}
+.assignment:hover{
+  background-color: #F76F8E;
+  color: #fff;
 }
 .rest{
   color: #5CF64A;
   background-color: rgba(92, 246, 74, 0.4);
+  transition: all .5s;
+}
+.rest:hover{
+  background-color: #5CF64A;
+  color: #fff;
 }
 .add{
   color: #542E71;
   background-color: rgba(84, 46, 113, 0.25);
+  transition: all .5s;
+}
+.add:hover{
+  background-color: #542E71;
+  color: #fff;
 }
 #day-input, #month-input, #year-input{
   padding: 2px;
