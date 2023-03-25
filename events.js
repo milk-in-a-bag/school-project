@@ -202,11 +202,24 @@ monthInput.addEventListener("change", () => {
 const dayVal = dayInput.value;
 const yearVal = yearInput.value;
 const monthVal = monthInput.value;
+const sendButton = document.querySelector(".send-button");
 
-if(Notification.permission !== "denied"){
-  Notification.requestPermission()
-};
-
-if(dayVal === currentDate.getDate() && yearVal === currentDate.getFullYear() && monthVal === month_names[currentDate.getMonth()]){
-
+ // Check if the browser supports notifications
+if ("Notification" in window) {
+  // Request permission for notifications
+  Notification.requestPermission().then((permission) =>{
+    // If the user grants permission, create a notification
+    if (permission === "granted") {
+      const notification = new Notification("Task Reminder", {
+        body: "You have a task due soon!",
+      });
+      // Close the notification after a few seconds
+      setTimeout(notification.close.bind(notification), 5000000);
+    }
+  });
 }
+
+
+/*if(dayVal === currentDate.getDate() && yearVal === currentDate.getFullYear() && monthVal === month_names[currentDate.getMonth()]){
+
+}*/
