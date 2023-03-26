@@ -179,6 +179,66 @@ const dayInput = document.querySelector("#day-input");
 const monthInput = document.querySelector("#month-input");
 const yearInput = document.querySelector("#year-input");
 
+
+  let result = false;
+  let result2 = false;
+  let result3 = false;
+
+  dayInput.addEventListener("change", () => {
+    const siku = dayInput.value;
+    const sikuYaLeo = currentDate.getDate();
+    const leoLeo = sikuYaLeo.toString();
+
+    if (siku === leoLeo) {
+      result = true;
+    } else {
+      result = false;
+    }
+  });
+
+  monthInput.addEventListener("change", () => {
+    const monthVal = monthInput.value;
+    const mwezi = month_names[currentDate.getMonth()];
+
+    if (monthVal === mwezi) {
+      result2 = true;
+    } else {
+      result2 = false;
+    }
+  });
+
+  yearInput.addEventListener("change", () => {
+    const yearVal = yearInput.value;
+    const mwakahuu = currentDate.getFullYear();
+    const miaka = mwakahuu.toString();
+
+    if (yearVal === miaka){
+      result3 = true;
+    } else {
+      result3 = false;
+    }
+  });
+
+  window.addEventListener("change", ()=>{
+    if(result && result2 && result3){
+      console.log("sawa")
+      if ("Notification" in window) {
+        // Request permission for notifications
+        Notification.requestPermission().then((permission) =>{
+          // If the user grants permission, create a notification
+          if (permission === "granted") {
+            const notification = new Notification("Task Reminder", {
+              body: "You have a task due soon!",
+            });
+            // Close the notification after a few seconds
+            setTimeout(notification.close.bind(notification), 5000000);
+          }
+        });
+    } else{
+      console.log("si sawa")
+      console.log(`${result}, ${result2}, ${result3}`)
+    }  
+  }})
 monthInput.addEventListener("change", () => {
   const val = monthInput.value;
   const mwaka = yearInput.value;
@@ -204,22 +264,27 @@ const yearVal = yearInput.value;
 const monthVal = monthInput.value;
 const sendButton = document.querySelector(".send-button");
 
- // Check if the browser supports notifications
-if ("Notification" in window) {
-  // Request permission for notifications
-  Notification.requestPermission().then((permission) =>{
-    // If the user grants permission, create a notification
-    if (permission === "granted") {
-      const notification = new Notification("Task Reminder", {
-        body: "You have a task due soon!",
-      });
-      // Close the notification after a few seconds
-      setTimeout(notification.close.bind(notification), 5000000);
+
+if(dayVal !== "" && yearVal !== "" && eventName !== ""){
+  console.log("were good to go");
+
+  /*
+  sendButton.addEventListener("click", () => {
+    if(dayVal === currentDate.getDate() && yearVal === currentDate.getFullYear() && monthVal === month_names[currentDate.getMonth()]){
+      // Check if the browser supports notifications
+      if ("Notification" in window) {
+        // Request permission for notifications
+        Notification.requestPermission().then((permission) =>{
+          // If the user grants permission, create a notification
+          if (permission === "granted") {
+            const notification = new Notification("Task Reminder", {
+              body: "You have a task due soon!",
+            });
+            // Close the notification after a few seconds
+            setTimeout(notification.close.bind(notification), 5000000);
+          }
+        });
+      }
     }
-  });
+  })*/
 }
-
-
-/*if(dayVal === currentDate.getDate() && yearVal === currentDate.getFullYear() && monthVal === month_names[currentDate.getMonth()]){
-
-}*/
